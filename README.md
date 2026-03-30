@@ -201,3 +201,6 @@ MiroFish 的仿真引擎由 **[OASIS](https://github.com/camel-ai/oasis)** 驱�
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=666ghj/MiroFish&type=date&legend=top-left" />
  </picture>
 </a>
+
+---
+*Fork synced: 2026-03-30 via [workspace ecosystem](https://github.com/BA-CalderonMorales)*
