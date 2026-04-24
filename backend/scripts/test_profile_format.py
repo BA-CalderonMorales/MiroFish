@@ -19,6 +19,7 @@ from app.services.oasis_profile_generator import OasisProfileGenerator, OasisAge
 
 def test_profile_formats():
     """测试Profile格式"""
+    has_errors = False
     print("=" * 60)
     print("OASIS Profile格式测试")
     print("=" * 60)
@@ -91,6 +92,7 @@ def test_profile_formats():
         missing = set(required_twitter_fields) - set(rows[0].keys())
         if missing:
             print(f"\n   [错误] 缺少字段: {missing}")
+            has_errors = True
         else:
             print(f"\n   [通过] 所有必需字段都存在")
         
@@ -116,6 +118,7 @@ def test_profile_formats():
         missing = set(required_reddit_fields) - set(reddit_data[0].keys())
         if missing:
             print(f"\n   [错误] 缺少必需字段: {missing}")
+            has_errors = True
         else:
             print(f"\n   [通过] 所有必需字段都存在")
         
@@ -123,6 +126,10 @@ def test_profile_formats():
         print(f"   [信息] 可选字段: {present_optional}")
     
     print("\n" + "=" * 60)
+    if has_errors:
+        print("测试失败!")
+        print("=" * 60)
+        sys.exit(1)
     print("测试完成!")
     print("=" * 60)
 
