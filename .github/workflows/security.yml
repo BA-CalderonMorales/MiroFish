@@ -9,12 +9,10 @@ on:
 permissions:
   contents: read
 
-permissions:
-  contents: read
-
 jobs:
   gitleaks:
     uses: BA-CalderonMorales/.github/.github/workflows/security-scan.yml@2ac88022e38caaaff37f13c2ffbbc62720c9e280
+    secrets: inherit
 
   python-tests:
     runs-on: ubuntu-latest
@@ -37,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run Trivy filesystem scan
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           scan-type: fs
           scan-ref: .
