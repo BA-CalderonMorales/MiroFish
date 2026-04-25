@@ -60,3 +60,4 @@ backend/uploads/
 data/
 # Temporary files folder - never commit
 tmp/
+scripts/prune-branches.sh
